@@ -4,6 +4,12 @@ function cargarCabecera() {
     header.innerHTML = `
         <div id="header">
             <!-- Sección Izquierda del Menú -->
+            <style>
+                #menu-left img {
+                    width: 100px;
+                    height: auto;
+                }
+            </style>
             <div id="menu-left">
                 <a href="index.html"><img src="logo.png" alt="FTILand Logo"></a>
             </div>
