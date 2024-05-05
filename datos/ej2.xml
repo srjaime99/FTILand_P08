@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<parque xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ej1.xsd">
+    <areas>
+        <area>
+            <nombre>Plaza Mayor</nombre>
+            <atracciones>
+                <atraccion clave="1q2w3e4r">
+                    <id>PLA-01</id>
+                    <nombre_com>Carrusel</nombre_com>
+                    <estado>OP</estado>
+                    <alt_min>0.80</alt_min>
+                    <alt_max></alt_max>
+                    <tipo>Atracción</tipo>
+                    <nivel>Suave</nivel>
+                    <expres>No</expres>
+                    <ult_revis>20/02/2023</ult_revis>
+                </atraccion>
+                <atraccion clave="1a2s3d4f">
+                    <id>PLA-02</id>
+                    <nombre_com>Motospeed</nombre_com>
+                    <estado>OP</estado>
+                    <alt_min>1.20</alt_min>
+                    <alt_max>1.95</alt_max>
+                    <tipo>Montaña rusa</tipo>
+                    <nivel>Moderada</nivel>
+                    <expres>Sí</expres>
+                    <ult_revis>01/11/2023</ult_revis>
+                </atraccion>
+                <atraccion clave="1z2x3c4v">
+                    <id>PLA-03</id>
+                    <nombre_com>Caída libre</nombre_com>
+                    <estado>OP</estado>
+                    <alt_min>1.40</alt_min>
+                    <alt_max>1.95</alt_max>
+                    <tipo>Atracción</tipo>
+                    <nivel>Intensa</nivel>
+                    <expres>Sí</expres>
+                    <ult_revis>02/01/2024</ult_revis>
+                </atraccion>
+            </atracciones>
+        </area>
+        <area>
+            <nombre>The Far West</nombre>
+            <atracciones>
+                <atraccion clave="0o9i8u7y">
+                    <id>TFW-01</id>
+                    <nombre_com>Saloon</nombre_com>
+                    <estado>OP</estado>
+                    <alt_min>1.30</alt_min>
+                    <alt_max></alt_max>
+                    <tipo>Giratoria</tipo>
+                    <nivel>Moderada</nivel>
+                    <expres>Sí</expres>
+                    <ult_revis>01/01/2021</ult_revis>
+                </atraccion>
+                <atraccion clave="0k9j8h7g">
+                    <id>TFW-02</id>
+                    <nombre_com>Iron Cowboy</nombre_com>
+                    <estado>OB</estado>
+                    <alt_min>1.20</alt_min>
+                    <alt_max>1.90</alt_max>
+                    <tipo>Montaña rusa</tipo>
+                    <nivel>Intensa</nivel>
+                    <expres>Sí</expres>
+                    <ult_revis></ult_revis>
+                </atraccion>
+                <atraccion clave="0m9n8b7v">
+                    <id>TFW-03</id>
+                    <nombre_com>Rápidos de Río Grande</nombre_com>
+                    <estado>OP</estado>
+                    <alt_min>1.00</alt_min>
+                    <alt_max></alt_max>
+                    <tipo>Acuática</tipo>
+                    <nivel>Moderada</nivel>
+                    <expres>Sí</expres>
+                    <ult_revis>02/01/2024</ult_revis>
+                </atraccion>
+            </atracciones>
+        </area>
+        <area>
+            <nombre>Territorio Pirata</nombre>
+            <atracciones>
+                <atraccion clave="1q0o2w9i">
+                    <id>PIR-01</id>
+                    <nombre_com>Barco Pirata</nombre_com>
+                    <estado>CE</estado>
+                    <alt_min>1.20</alt_min>
+                    <alt_max></alt_max>
+                    <tipo>Atracción</tipo>
+                    <nivel>Moderada</nivel>
+                    <expres>No</expres>
+                    <ult_revis></ult_revis>
+                </atraccion>
+                <atraccion clave="1a0k2s9j">
+                    <id>PIR-02</id>
+                    <nombre_com>Minibarco</nombre_com>
+                    <estado>OP</estado>
+                    <alt_min></alt_min>
+                    <alt_max>1.20</alt_max>
+                    <tipo>Atracción</tipo>
+                    <nivel>Suave</nivel>
+                    <expres>No</expres>
+                    <ult_revis>03/02/2024</ult_revis>
+                </atraccion>
+                <atraccion clave="1z0m2x9n">
+                    <id>PIR-03</id>
+                    <nombre_com>El Kraken</nombre_com>
+                    <estado>CE</estado>
+                    <alt_min>1.40</alt_min>
+                    <alt_max></alt_max>
+                    <tipo>Giratoria</tipo>
+                    <nivel>Intensa</nivel>
+                    <expres>Sí</expres>
+                    <ult_revis>04/08/2023</ult_revis>
+                </atraccion>
+                <atraccion clave="5tgb6tfc">
+                    <id>PIR-04</id>
+                    <nombre_com>Siete Mares</nombre_com>
+                    <estado>OP</estado>
+                    <alt_min>1.40</alt_min>
+                    <alt_max></alt_max>
+                    <tipo>Montaña rusa</tipo>
+                    <nivel>Intensa</nivel>
+                    <expres>Sí</expres>
+                    <ult_revis>02/12/2023</ult_revis>
+                </atraccion>
+            </atracciones>
+        </area>
+        <area>
+            <nombre>Cool Children Land</nombre>
+            <atracciones>
+                <atraccion clave="56ttfgcb">
+                    <id>CCL-01</id>
+                    <nombre_com>Pequecoaster</nombre_com>
+                    <estado>OP</estado>
+                    <alt_min>0.80</alt_min>
+                    <alt_max></alt_max>
+                    <tipo>Montaña rusa</tipo>
+                    <nivel>Suave</nivel>
+                    <expres>Sí</expres>
+                    <ult_revis>02/12/2023</ult_revis>
+                </atraccion>
+            </atracciones>
+        </area>
+        <area>
+            <nombre>Calle Futura</nombre>
+            <atracciones>
+                <atraccion clave="1qaz2wsx">
+                    <id>FUT-01</id>
+                    <nombre_com>Nave Alocada</nombre_com>
+                    <estado>OP</estado>
+                    <alt_min>1.00</alt_min>
+                    <alt_max></alt_max>
+                    <tipo>Giratoria</tipo>
+                    <nivel>Moderada</nivel>
+                    <expres>No</expres>
+                    <ult_revis>04/08/2023</ult_revis>
+                </atraccion>
+                <atraccion clave="3edc4rfv">
+                    <id>FUT-02</id>
+                    <nombre_com>AquaUFO</nombre_com>
+                    <estado>OP</estado>
+                    <alt_min>1.00</alt_min>
+                    <alt_max>1.90</alt_max>
+                    <tipo>Acuática</tipo>
+                    <nivel>Moderada</nivel>
+                    <expres>Sí</expres>
+                    <ult_revis>01/11/2019</ult_revis>
+                </atraccion>
+            </atracciones>
+        </area>
+    </areas>
+    <empleados>
+        <empleado>
+            <id_empleado>1001</id_empleado>
+            <puesto>PLA-01</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1002</id_empleado>
+            <puesto>PLA-02</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1003</id_empleado>
+            <puesto>PLA-03</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1004</id_empleado>
+            <puesto>TFW-01</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1005</id_empleado>
+            <puesto>TFW-02</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1006</id_empleado>
+            <puesto>TFW-03</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1007</id_empleado>
+            <puesto>PIR-01</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1008</id_empleado>
+            <puesto>PIR-02</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1009</id_empleado>
+            <puesto>PIR-03</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1010</id_empleado>
+            <puesto>PIR-04</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1011</id_empleado>
+            <puesto>CCL-01</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1012</id_empleado>
+            <puesto>CCL-02</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>1013</id_empleado>
+            <puesto>CCL-03</puesto>
+            <rol>Tecnico</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>0001</id_empleado>
+            <puesto>Plaza Mayor</puesto>
+            <rol>Responsable</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>0002</id_empleado>
+            <puesto>The Far West</puesto>
+            <rol>Responsable</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>0003</id_empleado>
+            <puesto>Territorio Pirata</puesto>
+            <rol>Responsable</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>0004</id_empleado>
+            <puesto>Cool Children Land3</puesto>
+            <rol>Responsable</rol>
+        </empleado>
+        <empleado>
+            <id_empleado>0005</id_empleado>
+            <puesto>Calle Futura</puesto>
+            <rol>Responsable</rol>
+        </empleado>
+    </empleados>
+</parque>
