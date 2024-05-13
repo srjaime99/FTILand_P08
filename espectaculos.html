@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espectáculos - Grupo P08</title>
     <link rel="stylesheet" href="lib/styles.css">
+    <script src="lib/util.js"></script>
+    <script src="lib/espectaculos.js"></script>
 </head>
-<body onload="llamarAPI()">
+<body onload="solicitarInfo()">
     <div id="header">
         <!-- Sección Izquierda del Menú -->
         <div id="logo">
@@ -27,10 +29,10 @@
         </div>
     </div>
 
+    <div id="fecha"></div>
+    <div id="botonesOrdenar"></div>
     <div id="main">
         <!-- Contenido de los espectáculos se cargará dinámicamente aquí -->
     </div>
-
-    <script src="lib/script.js"></script>
 </body>
 </html>
