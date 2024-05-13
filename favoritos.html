@@ -4,17 +4,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Atracciones Favoritas - Grupo P08</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="lib/styles.css">
+        <script src="lib/util.js"></script>
+        <script src="lib/favoritos.js"></script>
     </head>
-    <body>
+    <body onload="mostrarFavoritos()">
         <div id="header">
-            <h1>Atracciones Favoritas</h1>
+            <!-- Sección Izquierda del Menú -->
+            <div id="logo">
+                <a href="index.html"><img src="img/logo.png" alt="FTILand Logo"></a>
+            </div>
+            <!-- Sección Centro del Menú -->
+            <div id="menu-center"><h1>ATRACCIONES FAVORITAS</h1></div>
+            <!-- Sección Derecha del Menú -->
+            <div id="menu-right">
+                <ul>
+                    <li><a href="atracciones.html">Atracciones</a></li>
+                    <li><a href="espectaculos.html">Espectáculos</a></li>
+                    <li><a href="sugerencias.html">Sugerencias</a></li>
+                    <!-- Cambiar más adelante por botones, probablemente. 
+                    Mirar si se puede bloquear enlace de la página actual.
+                    Si no, añadirlo a cada página quitando cada una. -->
+                </ul>
+            </div>
         </div>
 
-        <div id="main">
-            <!-- Contenido de atracciones favoritas se cargará dinámicamente aquí -->
-        </div>
-
-        <script src="js/script.js"></script>
+        <div id="main"></div>
     </body>
 </html>
