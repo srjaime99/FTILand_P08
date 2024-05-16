@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Sugerencias - Grupo P08</title>
     <link rel="stylesheet" href="lib/styles.css">
+    <!--<link rel="stylesheet" href="lib/form.css">-->
 </head>
 <body>
     <div id="header">
@@ -28,9 +29,31 @@
     </div>
 
     <div id="main">
-        <!-- Contenido del formulario de sugerencias se cargará dinámicamente aquí -->
+        <form>
+            <div class="name writing">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required>
+            <span id="nombre-error" class="error-message"></span>
+            </div>
+          
+            <div class="email writing">
+              <label for="email">Email</label>
+              <input type="text" id="email" name="email">
+                <span id="email-error" class="error-message"></span>
+            </div>
+          
+            <div class="textarea writing">
+              <label for="sugerencias">Sugerencias</label>
+              <textarea id="sugerencias" name="sugerencias"></textarea>
+                <span id="sugerencias-error" class="error-message"></span>
+            </div>
+    
+            <div class="submit">
+              <input type="submit" value="Enviar">
+            </div>
+          </form>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="lib/formulario.js"></script>
 </body>
 </html>

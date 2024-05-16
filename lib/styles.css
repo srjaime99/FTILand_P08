@@ -16,3 +16,15 @@ section {
     width: 100%;
     align-items: center;
 }
+
+.error-message {
+    color: red;
+}
+
+.valid {
+    border-color: green;
+}
+
+.invalid {
+    border-color: red;
+}
