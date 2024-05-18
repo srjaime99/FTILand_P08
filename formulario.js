@@ -60,12 +60,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
+//
 // Función para enviar los datos del formulario
 function sendData(nombre, email, sugerencias) {
     var xhr = new XMLHttpRequest();
 
-    xhr.open('POST', 'https://samuelencinas.dev/POST/sugerencias_parque', true);
+    xhr.open('POST', 'https://samuelencinas.dev/sugerencias_parque', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onload = function () {
