@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Sugerencias - Grupo P08</title>
     <link rel="stylesheet" href="lib/styles.css">
-    <!--<link rel="stylesheet" href="lib/form.css">-->
+    <link rel="stylesheet" href="lib/cabecera.css">
+    <link rel="stylesheet" href="lib/cuerpo.css">
+    <link rel="stylesheet" href="lib/form.css">
 </head>
 <body>
     <div id="header">
@@ -21,15 +23,12 @@
                 <li><a href="atracciones.html">Atracciones</a></li>
                 <li><a href="espectaculos.html">Espectáculos</a></li>
                 <li><a href="favoritos.html">Favoritos</a></li>
-                <!-- Cambiar más adelante por botones, probablemente. 
-                Mirar si se puede bloquear enlace de la página actual.
-                Si no, añadirlo a cada página quitando cada una. -->
             </ul>
         </div>
     </div>
 
     <div id="main">
-        <form>
+        <form id="card">
             <div class="name writing">
               <label for="nombre">Nombre</label>
               <input type="text" id="nombre" name="nombre" required>
@@ -52,6 +51,7 @@
               <input type="submit" value="Enviar" disabled>
             </div>
           </form>
+          <div id="error-message" style="color: red; margin-top: 10px;"></div>
     </div>
 
     <script src="lib/formulario.js"></script>

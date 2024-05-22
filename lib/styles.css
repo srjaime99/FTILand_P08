@@ -1,15 +1,9 @@
 body {
-    background-color: lightgray;
+    background-image: url('../img/fondo.jpeg'); 
+    background-size: cover;
+    background-repeat: no-repeat; 
 }
-#logo a img{
-    width: 150px; 
-    height: 150px;
-}
-#header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 section {
     display: flex;
     justify-content: space-around;
@@ -23,8 +17,88 @@ section {
 
 .valid {
     border-color: green;
+    background-color: green;
 }
 
 .invalid {
     border-color: red;
+    background-color: red;
+}
+
+.table-container {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table th, #main-right {
+    background-color: #34495e;
+    color: #fff;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #522897;
+}
+
+table tr:hover {
+    background-color: #0a5e8f;
+}
+
+#main-right {
+    background-color: #34495e;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#main-right h2 {
+    color: #34495e;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#main-right p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#fecha {
+    background-color: #34495e;
+    color: #fff;
+    font-weight: bold;
+    margin: 10px 20px;
+    padding: 10px 20px; 
+    border-radius: 5px; 
+}
+
+
+#botonesOrdenar {
+    margin-top: 20px; 
+}
+
+#botonesOrdenar button {
+    background-color: #fff; 
+    color: #34495e; 
+    border: 1px solid #34495e; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    margin-right: 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#botonesOrdenar button:hover {
+    background-color: #34495e; 
+    color: #916acf; 
+    border-color: #fff; 
 }

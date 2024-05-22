@@ -1,110 +1,46 @@
-/* Estilos pagina */
-* {margin: 0; box-sizing: border-box;}
-body {
-  min-height: 100vh;
-  background-color: #101010;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  font-family: Arial;
-  color: White;
-  font-size: min(25px, max(3.4vw, 17px));
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px;
-}
-
-
-/* Estilos personalizados */
 form {
-  width: 100%;
-  max-width: 800px;
-}
-form > div {
-  margin: .7em 0;
-  text-align: left;
-}
-input, textarea {
-  background: transparent;
-  border: 0;
-  outline: 0;
-  font-size: 1em;
-  color: white;
-}
-
-
-/* text, email, textarea y number */
-.writing {
   display: flex;
   flex-direction: column;
-  position: relative
-}
-.writing :is(input , textarea) {
-  padding: 10px 0;
-  margin-top: 1.2em;
-}
-.writing :is(input , textarea) ~ label {
-  position: absolute;
-  top: calc(10px + 0.8em);
-  left: 0px;
-  pointer-events: none;
-  transition: all .2s ease;
-  color: #ababab;
-}
-.writing :is(input , textarea):focus ~ label,
-.writing :is(input , textarea).has-text ~ label{
-  top: 0px;
-  font-size: .9em;
-}
-.writing :is(input , textarea) ~ span {
-  content: "";
-  height: 1px;
-  width: 100%;
-  background: #80808080;
-  display: flex;
+  align-items: center;
   justify-content: center;
-}
-.writing :is(input , textarea):invalid ~ span {
-  background: #ff0000;
-}
-.writing :is(input , textarea) ~ span:before {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 0%;
-  background: #03A9F4;
-  transition: width .5s ease;
-}
-.writing :is(input , textarea):focus ~ span:before {width: 100%;}
-/* text y email */
-.writing:is(.text , .email) :is(input , input ~ span) {width: 400px;}
-/* textarea */
-.textarea textarea {
-  overflow: auto;
-  min-height: calc(1em + 20px);
-  height: 1.2em;
-  overflow: hidden;
-  resize: none;
+  height: 100%; /* Aprovecha toda la altura del div main */
 }
 
-/* color */
-.color input {
-  width: 1.75em;
-  height: 1.75em;
-  cursor: pointer;
+.name,
+.email,
+.textarea,
+.submit {
+    margin-bottom: 20px; /* Espacio entre los elementos del formulario */
 }
 
-
-/* submit */
-.submit input {
-  padding: .5em 1em;
-  background: #3399ff;
-  border-radius: 5px;
-  cursor: pointer;
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
-.submit input:active {
-  background: #225588;
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
 }
