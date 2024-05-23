@@ -3,14 +3,14 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%; /* Aprovecha toda la altura del div main */
+  height: 100%; 
 }
 
 .name,
 .email,
 .textarea,
 .submit {
-    margin-bottom: 20px; /* Espacio entre los elementos del formulario */
+    margin-bottom: 20px; 
 }
 
 input[type="text"],
