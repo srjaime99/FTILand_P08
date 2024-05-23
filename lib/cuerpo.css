@@ -1,21 +1,18 @@
-/* Estilos para el contenido principal */
 #main {
-    padding: 20px; /* Espaciado interno */
-    background-color: #34495e; /* Color de fondo oscuro */
-    color: #fff; /* Color del texto */
-    margin-top: 20px; /* Margen superior para separación de la cabecera */
-}
+    padding: 20px; 
+    background-color: #34495e; 
+    color: #fff; 
+    margin-top: 20px; 
 
-/* Estilos para los párrafos */
 #main p {
-    font-size: 16px; /* Tamaño del texto */
-    line-height: 1.6; /* Espaciado entre líneas */
-    margin-bottom: 20px; /* Espacio inferior entre párrafos */
+    font-size: 16px; 
+    line-height: 1.6;
+    margin-bottom: 20px; 
 }
 
 /* Media query para pantallas más pequeñas */
 @media only screen and (max-width: 768px) {
     #main {
-        margin-top: 10px; /* Reducir el margen superior para pantallas pequeñas */
+        margin-top: 10px; 
     }
 }
