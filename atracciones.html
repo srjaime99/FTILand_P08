@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atracciones - Grupo P08</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="lib/atracciones.css">
     <link rel="stylesheet" href="lib/styles.css">
     <link rel="stylesheet" href="lib/cabecera.css">
     <link rel="stylesheet" href="lib/cuerpo.css">
-    <script src="lib/util.js"></script>
-    <script src="lib/atracciones.js"></script>
+    <title>Datos de Atracciones</title>
 </head>
-<body onload="init()">
+<body>
     <div id="header">
         <div id="logo">
             <a href="index.html"><img src="img/logo.png" alt="FTILand Logo"></a>
@@ -24,8 +25,12 @@
             </ul>
         </div>
     </div>
-        <div id="main" class="table-container"></div>
-        <div id="main-right" class="details"></div>
 
+    <div class="container mt-5">
+        <div id="areas"></div>
+    </div>
+
+    <script src="lib/util.js"></script>
+    <script src="lib/atracciones.js"></script>
 </body>
 </html>

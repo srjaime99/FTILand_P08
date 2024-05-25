@@ -3,11 +3,12 @@
     background-color: #34495e; 
     color: #fff; 
     margin-top: 20px; 
+}
 
 #main p {
-    font-size: 16px; 
+    font-size: 20px; 
     line-height: 1.6;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 /* Media query para pantallas más pequeñas */
