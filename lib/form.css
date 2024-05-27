@@ -37,10 +37,17 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #6dd372;
 }
 
 .error-message {
-    color: red;
+    color: rgb(192, 61, 61);
     font-size: 12px;
+}
+
+#success-message,
+#error.message {
+    color: #6dd372;
+    font-weight: bold;
+    display: none;
 }
