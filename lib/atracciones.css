@@ -6,6 +6,29 @@
     font-size: 1.5rem;
     color: red;
   }
+
+  .texto-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: red;
+  }
+
+  .card-header {
+    background-color: #2c445ca2;
+    color: white;
+    font-size: 2rem;
+  }
+
+  .cardGrande{
+    position: relative;
+    background-color: #34495e48;
+  }
+
   .card {
     position: relative;
+    background-color: #34495eb3;
+    color: white;
   }

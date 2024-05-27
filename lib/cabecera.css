@@ -11,12 +11,15 @@
     width: 100px;
 }
 
-#menu-center a{
+#menu-center a, #tituloPagina{
     font-size: 30px;
     margin: 0;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
+}
+
+#menu-center a{
     transition: color 0.3s;
 }
 
