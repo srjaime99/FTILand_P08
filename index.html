@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FTILand - Página de Inicio - Grupo P08</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="lib/styles.css">
-    <link rel="stylesheet" href="lib/cuerpo.css">
+    <link rel="stylesheet" href="lib/index.css">
     <link rel="stylesheet" href="lib/cabecera.css">
     <link rel="icon" type="image/jpg" href="img/logo.png"/>
 </head>
@@ -28,14 +30,61 @@
             </ul>
         </div>
     </div>
-    <div id="main">
-        <p>¡Bienvenidos a FTILand, el lugar donde la diversión y la emoción se fusionan para crear momentos inolvidables! Sumérgete en un mundo de fantasía y aventura mientras exploras nuestras atracciones emocionantes y disfrutas de espectáculos llenos de magia y entretenimiento.</p>
-
-        <p>En FTILand, nos enorgullecemos de ofrecer una experiencia única para visitantes de todas las edades. Desde montañas rusas vertiginosas hasta espectáculos cautivadores, cada rincón de nuestro parque está diseñado para deslumbrar y sorprender.</p>
-
-        <p>Prepárate para vivir momentos inolvidables junto a tus seres queridos mientras exploras nuestras áreas temáticas llenas de encanto y maravilla. Ya sea que busques una dosis de adrenalina o simplemente quieras relajarte y disfrutar de un día de diversión, FTILand tiene algo especial para cada uno.</p>
-
-        <p>Nuestra página web informativa te guiará a través de todas las emocionantes atracciones y espectáculos que ofrecemos, así como te brindará la oportunidad de planificar tu visita de manera conveniente y sencilla. ¡Estamos emocionados de compartir contigo la magia de FTILand y esperamos que te unas a nosotros en esta increíble aventura!</p>
+    <div id="main" class="container my-4">
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="img/img1.jpg" class="img-fluid rounded-start" alt="Imagen 1">
+                </div>
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="card-body">
+                        <p class="card-text">¡Bienvenidos a FTILand, el lugar donde la diversión y la emoción se fusionan para crear momentos inolvidables! Sumérgete en un mundo de fantasía y aventura mientras exploras nuestras atracciones emocionantes y disfrutas de espectáculos llenos de magia y entretenimiento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-8 d-flex align-items-center">
+                    <div class="card-body">
+                        <p class="card-text">En FTILand, nos enorgullecemos de ofrecer una experiencia única para visitantes de todas las edades. Desde montañas rusas vertiginosas hasta espectáculos cautivadores, cada rincón de nuestro parque está diseñado para deslumbrar y sorprender.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/img2.jpg" class="img-fluid rounded-start" alt="Imagen 2">
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="img/img3.jpg" class="img-fluid rounded-start" alt="Imagen 3">
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                    <div class="card-body">
+                        <p class="card-text">Prepárate para vivir momentos inolvidables junto a tus seres queridos mientras exploras nuestras áreas temáticas llenas de encanto y maravilla. Ya sea que busques una dosis de adrenalina o simplemente quieras relajarte y disfrutar de un día de diversión, FTILand tiene algo especial para cada uno.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-8 d-flex align-items-center">
+                    <div class="card-body">
+                        <p class="card-text">Nuestra página web informativa te guiará a través de todas las emocionantes atracciones y espectáculos que ofrecemos, así como te brindará la oportunidad de planificar tu visita de manera conveniente y sencilla. ¡Estamos emocionados de compartir contigo la magia de FTILand y esperamos que te unas a nosotros en esta increíble aventura!</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="img/img4.jpg" class="img-fluid rounded-start" alt="Imagen 4">
+                </div>
+            </div>
+        </div>
     </div>
+    <div id="divMapa">
+        <h1 id="textoMapa">¿Donde encontrarnos?</h1>
+    </div>
+    <div id="map"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+3mgPxhU8cbhu8AKbxu1dPIA5jUz1" crossorigin="anonymous"></script>
+    <script src="lib/index.js"></script>
 </body>
 </html>

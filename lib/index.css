@@ -1,0 +1,51 @@
+#main {
+    margin-top: 20px; 
+}
+
+.img-fluid{
+    width: 100%;
+}
+
+.card-text {
+    padding: 30px;
+    background-color: #c5d8eb; 
+    color: #000;
+    font-size: 20px; 
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.125);
+}
+
+#divMapa {
+    padding: 3px;
+    background-color: #c5d8ebde;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    color: #000;
+    margin-bottom: 20px; 
+}
+
+#textoMapa {
+    font-size: 15px; 
+}
+
+#map {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    height: 400px;
+    margin-bottom: 50px;
+}
+
+/* Media query para pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
+    #main {
+        margin-top: 10px; 
+    }
+}
