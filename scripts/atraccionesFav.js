@@ -1,21 +1,25 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const jsonData = loadJSON();
     const xmlData = loadXML();
-    cargarContenido(jsonData, xmlData)
+    cargarContenidoFavoritos(jsonData, xmlData)
   });
 
-function cargarContenido(jsonData, xmlData){
+function cargarContenidoFavoritos(jsonData, xmlData){
     if (!!jsonData && !!xmlData) {
         const areas = xmlData.querySelectorAll('area');
         const areasContainer = document.getElementById('areas');
         
         areas.forEach(area => {
-            areasContainer.appendChild(crearArea(area, jsonData));  
+            console.log(crearAreaFavs(area, jsonData))
+            hayFav = crearAreaFavs(area, jsonData)
+            if(hayFav){
+                areasContainer.appendChild(crearAreaFavs(area, jsonData));
+            }
         });
     }
 }
 
-function crearArea(area, jsonData){
+function crearAreaFavs(area, jsonData){
     const nombreArea = area.querySelector('nombre').textContent;
     const atracciones = area.querySelectorAll('atraccion');
     
@@ -32,22 +36,37 @@ function crearArea(area, jsonData){
     const rowDiv = document.createElement('div');
     rowDiv.classList.add('row');
 
+    let hayFavs = false
     atracciones.forEach(atraccion => {
-        rowDiv.appendChild(crearAtraccion(atraccion, jsonData));
+        const id = atraccion.querySelector('id').textContent;
+        if(verEstadoFav(id)){
+            rowDiv.appendChild(crearAtraccionDetallada(atraccion, jsonData));
+            hayFavs = true
+        }
     });
 
-    areaBody.appendChild(rowDiv);
-    areaDiv.appendChild(areaHeader);
-    areaDiv.appendChild(areaBody);
-    return areaDiv  
+    if(hayFavs){
+        areaBody.appendChild(rowDiv);
+        areaDiv.appendChild(areaHeader);
+        areaDiv.appendChild(areaBody);
+        return areaDiv;
+    }else{
+        return false;
+    }
 }
 
-function crearAtraccion(atraccion, jsonData){
+function crearAtraccionDetallada(atraccion, jsonData){
     const id = atraccion.querySelector('id').textContent;
     const nombreCom = atraccion.querySelector('nombre_com').textContent;
     const tipo = atraccion.querySelector('tipo').textContent;
     const estado = atraccion.querySelector('estado').textContent;
     const expres = atraccion.querySelector('expres').textContent;
+    let altMin = atraccion.querySelector('alt_min').textContent;
+    let altMax = atraccion.querySelector('alt_max').textContent;
+    const nivel = atraccion.querySelector('nivel').textContent;
+
+    altMin = altMin === "" ? altMin : "No hay minimo"
+    altMax = altMax === "" ? altMax : "No hay máximo"
 
     // Verificamos si el ID de la atracción existe en el JSON
     if (jsonData.hasOwnProperty(id)) {
@@ -70,25 +89,27 @@ function crearAtraccion(atraccion, jsonData){
             <div class="card-body">
                 <h5 class="card-title">${nombreCom}</h5>
                 <p class="card-text"><strong>Tipo:</strong> ${tipo}</p>
+                <p class="card-text"><strong>Altura minima:</strong> ${altMin}</p>
+                <p class="card-text"><strong>Altura máxima:</strong> ${altMax}</p>
+                <p class="card-text"><strong>Nivel:</strong> ${nivel}</p>
                 <p class="card-text"><strong>Espera:</strong> ${espera}</p>
                 <p class="card-text"><strong>Espera Express:</strong> ${esperaExpress}</p>
             </div>
         </div>
     `;
     
-    if (estado === "OP"){
-        const favoriteIcon = document.createElement('i');
+    const favoriteIcon = document.createElement('i');
 
-        favoriteIcon.classList.add('fa-heart', 'favorite-icon');
-        if (verEstadoFav(id)) {
-            favoriteIcon.classList.add('fas');
-            favoriteIcon.classList.remove('far');
-        } else {
-            favoriteIcon.classList.add('far');
-            favoriteIcon.classList.remove('fas');
-        }
+    favoriteIcon.classList.add('fa-heart', 'favorite-icon');
+    if (verEstadoFav(id)) {
+        favoriteIcon.classList.add('fas');
+        favoriteIcon.classList.remove('far');
+    } else {
+        favoriteIcon.classList.add('far');
+        favoriteIcon.classList.remove('fas');
+    }
 
-        favoriteIcon.addEventListener("click", function() {
+    favoriteIcon.addEventListener("click", function() {
         if (verEstadoFav(id)) {
             favoriteIcon.classList.remove('fas');
             favoriteIcon.classList.add('far');
@@ -101,17 +122,6 @@ function crearAtraccion(atraccion, jsonData){
     });
 
     atraccionDiv.querySelector('.card').appendChild(favoriteIcon);
-    }else if(estado === "OB"){
-        const textoObras = document.createElement('td');
-        textoObras.textContent = "Atraccion en obras";
-        textoObras.classList.add('texto-icon');
-        atraccionDiv.querySelector('.card').appendChild(textoObras);
-    }else{
-        const textoNoDisponible = document.createElement('td');
-        textoNoDisponible.textContent = "Atraccion cerrada";
-        textoNoDisponible.classList.add('texto-icon');
-        atraccionDiv.querySelector('.card').appendChild(textoNoDisponible);
-    }
     
     return(atraccionDiv);
 }

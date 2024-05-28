@@ -1,0 +1,19 @@
+#main {
+    padding: 20px; 
+    background-color: #34495e; 
+    color: #fff; 
+    margin-top: 20px; 
+}
+
+#main p {
+    font-size: 20px; 
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Media query para pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
+    #main {
+        margin-top: 10px; 
+    }
+}

@@ -6,13 +6,12 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <title>Atracciones Favoritas - Grupo P08</title>
-        <link rel="stylesheet" href="lib/styles.css">
-        <link rel="stylesheet" href="lib/cabecera.css">
-        <link rel="stylesheet" href="lib/cuerpo.css">
-        <script src="lib/util.js"></script>
-        <script src="lib/favoritos.js"></script>
+        <link rel="stylesheet" href="css/tarjetasAtracciones.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/cabecera.css">
+        <link rel="stylesheet" href="css/cuerpo.css">
     </head>
-    <body onload="mostrarFavoritos()">
+    <body>
         <div id="header">
             <div id="logo">
                 <a href="index.html"><img src="img/logo.png" alt="FTILand Logo"></a>
@@ -28,7 +27,12 @@
                 </ul>
             </div>
         </div>
-
-        <div id="main"></div>
+        
+        <div class="container mt-5">
+            <div id="areas"></div>
+        </div>
+        
+        <script src="scripts/util.js"></script>
+        <script src="scripts/atraccionesFav.js"></script>
     </body>
 </html>

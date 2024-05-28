@@ -23,7 +23,7 @@ function solicitarInfo(){
     }).catch(error => {
         // Manejar errores en caso de que la llamada a la API falle o se exceda el tiempo de espera
         if (error.message === "Timeout") {
-            document.getElementById("main").innerText = "No hay espectáculos disponibles";
+            document.getElementById("main").innerText = "Parece que el servidor esta tardando en responder, vuelva a intentarlo";
         } else {
             document.getElementById("main").innerText = "Error al llamar a la API, por favor vuelva a intentarlo\nSi el problema persiste contacte con soporte";
         }
