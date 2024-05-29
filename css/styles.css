@@ -80,24 +80,3 @@ table tr:hover {
     padding: 10px 20px; 
     border-radius: 5px; 
 }
-
-#botonesOrdenar {
-    margin-top: 20px; 
-}
-
-#botonesOrdenar button {
-    background-color: #fff; 
-    color: #34495e; 
-    border: 1px solid #34495e; 
-    border-radius: 5px; 
-    padding: 10px 20px; 
-    margin-right: 10px; 
-    cursor: pointer; 
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-#botonesOrdenar button:hover {
-    background-color: #34495e; 
-    color: #916acf; 
-    border-color: #fff; 
-}

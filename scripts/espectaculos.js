@@ -1,13 +1,11 @@
 async function llamarAPI() {
     var url = "https://samuelencinas.dev/shows_parque/P08";
     
-    // Crear una promesa que se resuelve después de 5 segundos
     const timeoutPromise = new Promise((_, reject) => {
         setTimeout(() => reject(new Error("Timeout")), 5000);
     });
 
     try {
-        // Competir entre la llamada a la API y el temporizador
         const response = await Promise.race([fetch(url), timeoutPromise]);
         const data = await response.json();
         return data;
@@ -16,12 +14,10 @@ async function llamarAPI() {
     }
 }
 
-function solicitarInfo(){
-    // Llamar a llamarAPI() y manejar la promesa resultante
+function solicitarInfo() {
     llamarAPI().then(data => {
         mostrarEspectaculos(data);
     }).catch(error => {
-        // Manejar errores en caso de que la llamada a la API falle o se exceda el tiempo de espera
         if (error.message === "Timeout") {
             document.getElementById("main").innerText = "Parece que el servidor esta tardando en responder, vuelva a intentarlo";
         } else {
@@ -31,116 +27,152 @@ function solicitarInfo(){
     });
 }
 
-function mostrarEspectaculos(infoEspectaculos){
-    document.getElementById("fecha").innerText = `Fecha: ${infoEspectaculos.date}\n\n`;
+function mostrarEspectaculos(infoEspectaculos) {
+    const divBotones = document.getElementById("botonesOrdenar");
 
-    // Aqui crear los botones y los liseners
+    const botones = [
+        { text: "Espectaculos", mode: 0 },
+        { text: "Esconder espectaculos que ya han ocurrido", mode: 1 },
+        { text: "Ordenar por horas", mode: 2 }
+    ];
 
-    // Boton 0: por areas (default)
-    const areasButton = document.createElement("button");
-    areasButton.textContent = "Areas por separado";
-    areasButton.style.backgroundColor = "white";
-    areasButton.addEventListener("click", function() {
-        ordenarShows(infoEspectaculos.shows, 0);
+    botones.forEach(buttonInfo => {
+        const button = document.createElement("button");
+        button.className = "btn btn-primary m-2";
+        button.textContent = buttonInfo.text;
+        button.addEventListener("click", function() {
+            ordenarShows(infoEspectaculos.shows, buttonInfo.mode);
+        });
+        divBotones.appendChild(button);
     });
-    document.getElementById("botonesOrdenar").appendChild(areasButton);
 
-    // Boton 1: solo si no han ocurrido todavia
-    const tiempoButton = document.createElement("button");
-    tiempoButton.textContent = "Quitar los pasados";
-    tiempoButton.style.backgroundColor = "white";
-    tiempoButton.addEventListener("click", function() {
-        ordenarShows(infoEspectaculos.shows, 1);
-    });
-    document.getElementById("botonesOrdenar").appendChild(tiempoButton);
-
-    // Boton 2: ordenados por horas
-    const porHorasButton = document.createElement("button");
-    porHorasButton.textContent = "Por horas";
-    porHorasButton.style.backgroundColor = "white";
-    porHorasButton.addEventListener("click", function() {
-        ordenarShows(infoEspectaculos.shows, 2);
-    });
-    document.getElementById("botonesOrdenar").appendChild(porHorasButton);
-
-    // Default
     ordenarShows(infoEspectaculos.shows, 0);
 }
 
-function ordenarShows(shows, modo){
-    texto = "";
-    switch(modo){
-        case 0: // Muestra los shows por areas
+function ordenarShows(shows, modo) {
+    const mainContainer = document.getElementById("main");
+
+    let content = "";
+    let index = 0;
+
+    switch (modo) {
+        case 0:
+            content += '<div class="row">';
+
             shows.forEach(show => {
                 Object.keys(show).forEach(category => {
                     if (show[category].length > 0) {
                         show[category].forEach(item => {
-                            if(item.hours.length !== 0){
-                                texto += `\nArea: ${cambiarIDaNombreArea(category)}\nNombre: ${item.name}\nHoras: ${item.hours.join(", ")}\n`;
-                            }
-                        });
-                    }
-                });
-            });
-        break;
-
-        case 1: // Solo si no han ocurrido todavia
-            const ahora = new Date();
-            const minutosActuales = ahora.getMinutes() + ahora.getHours()*60;
-            shows.forEach(show => {
-                Object.keys(show).forEach(category => {
-                    if (show[category].length > 0){
-                        show[category].forEach(item => {
-                            if(item.hours.length !== 0){
-                                horas = [];
-                                item.hours.forEach(hora => {
-                                    if(minutosActuales < parseInt(hora.substring(0, 2))*60 + parseInt(hora.substring(4, 6))){
-                                        horas.push(hora);
-                                    }
-                                })
-                                if(horas.length > 0){
-                                    texto += `\nArea: ${cambiarIDaNombreArea(category)}\nNombre: ${item.name}\nHoras: ${horas.join(", ")}\n`;
+                            if (item.hours.length !== 0) {
+                                content += crearTarjeta(category, item.name, item.hours.join(", "));
+                                index += 1;
+                                // Agregar una nueva fila cada dos elementos
+                                if (index % 2 === 0) {
+                                    content += '</div><div class="row">';
                                 }
                             }
                         });
                     }
                 });
             });
-        break;
 
-        case 2: // Ordenados por horas
-            let arrayEspectaculos = [];
+            // Cerrar la última fila si no es divisible exactamente por dos
+            if (index % 2 !== 0) {
+                content += '</div>';
+            }
+        break;
+        case 1:
+            const ahora = new Date();
+            const minutosActuales = ahora.getMinutes() + ahora.getHours() * 60;
+            content += '<div class="row">';
+
             shows.forEach(show => {
                 Object.keys(show).forEach(category => {
-                    if (show[category].length > 0){
+                    if (show[category].length > 0) {
                         show[category].forEach(item => {
-                            if(item.hours.length !== 0){
-                                item.hours.forEach(hora => {
-                                    arrayEspectaculos.push(`Area: ${cambiarIDaNombreArea(category)}\tNombre: ${item.name}\tHora: ${hora}`)
-                                })
+                            if (item.hours.length !== 0) {
+                                let horas = item.hours.filter(hora => {
+                                    return minutosActuales < parseInt(hora.substring(0, 2)) * 60 + parseInt(hora.substring(3, 5));
+                                });
+                                if (horas.length > 0) {
+                                    content += crearTarjeta(category, item.name, horas.join(", "));
+                                    index += 1;
+                                    // Agregar una nueva fila cada dos elementos
+                                    if (index % 2 === 0) {
+                                        content += '</div><div class="row">';
+                                    }
+                                }
                             }
-                        })
+                        });
                     }
                 });
             });
-            let arrayEspectaculos2 = [];
-            arrayEspectaculos.forEach(espectaculo => {
-                let hora = parseInt(espectaculo.slice(-5, -3))*60 + parseInt(espectaculo.slice(-2));
-                arrayEspectaculos2.push(`${hacerDe4cifras(hora.toString())}` + espectaculo);
-            });
-            arrayEspectaculos2.sort();
-            arrayEspectaculos2.forEach(espectaculo => {
-                texto += espectaculo.slice(4) + "\n";
-            });
+
+            if (index % 2 !== 0) {
+                content += '</div>';
+            }
         break;
+        case 2:
+            let arrayEspectaculos = [];
+            content += '<div class="row">';
+
+            shows.forEach(show => {
+                Object.keys(show).forEach(category => {
+                    if (show[category].length > 0) {
+                        show[category].forEach(item => {
+                            if (item.hours.length !== 0) {
+                                item.hours.forEach(hora => {
+                                    arrayEspectaculos.push({ category, name: item.name, hour: hora });
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+
+            arrayEspectaculos.sort((a, b) => {
+                let aTime = parseInt(a.hour.substring(0, 2)) * 60 + parseInt(a.hour.substring(3, 5));
+                let bTime = parseInt(b.hour.substring(0, 2)) * 60 + parseInt(b.hour.substring(3, 5));
+                return aTime - bTime;
+            });
+
+            arrayEspectaculos.forEach((espectaculo) => {
+                content += crearTarjeta(espectaculo.category, espectaculo.name, espectaculo.hour);
+                // Agregar una fila nueva cada dos elementos
+                index += 1
+                if (index % 2 === 0) {
+                    content += '</div><div class="row">';
+                }
+            });
+
+            // Cerrar la última fila si no es divisible exactamente por dos
+            if (arrayEspectaculos.length % 2 !== 0) {
+                content += '</div>';
+            }
+            break;
         default:
-            texto = "Algo ha salido mal";
+            content = "<div class='alert alert-danger'>Algo ha salido mal</div>";
     }
-    document.getElementById("main").innerText = texto;
+
+    mainContainer.innerHTML = `
+        <div class="row">
+            <div class="col">
+                ${content}
+            </div>
+        </div>
+    `;
 }
 
-function hacerDe4cifras(num){
-    return(num.length > 3 ? num : hacerDe4cifras("0" + num))
+function crearTarjeta(category, name, hours) {
+    return `
+        <div class="card custom-card">
+            <div class="card-body text-center">
+                <h5 class="card-title">${name}</h5>
+                <p class="card-text"><strong>Area:</strong> ${cambiarIDaNombreArea(category)}</p>
+                <p class="card-text"><strong>Horas:</strong> ${hours}</p>
+            </div>
+        </div>
+    `;
 }
 
 solicitarInfo();

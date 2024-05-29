@@ -1,0 +1,45 @@
+#main {
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#botonesOrdenar {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.card {
+    width: calc(50% - 20px); /* El 20px es para el margen entre las tarjetas */
+    margin: 10px;
+    background-color: #34495ecf;
+    color: white;
+}
+
+.custom-card .card-body {
+    text-align: center;
+}
+
+#botonesOrdenar {
+    margin-top: 20px; 
+}
+
+#botonesOrdenar button {
+    background-color: #1c344bbf; 
+    color: #ffffff; 
+    border: 1px solid #ffffff; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    margin-right: 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#botonesOrdenar button:hover {
+    background-color: #34495ece; 
+    color: #916acf; 
+    border-color: #fff; 
+}

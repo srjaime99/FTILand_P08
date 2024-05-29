@@ -11,7 +11,7 @@
     width: 100px;
 }
 
-#menu-center a, #tituloPagina{
+#menu-center #tituloPagina{
     font-size: 30px;
     margin: 0;
     text-decoration: none;
@@ -19,11 +19,11 @@
     font-weight: bold;
 }
 
-#menu-center a{
-    transition: color 0.3s;
+#menu-center #tituloPagina{
+    transition: color 5s;
 }
 
-#menu-center a:hover {
+#menu-center #tituloPagina:hover {
     color: #f39c12;
 }
 
