@@ -49,24 +49,3 @@
 #menu-right ul li a:hover {
     color: #f39c12;
 }
-
-@media only screen and (max-width: 768px) {
-    #header {
-        padding: 10px; 
-        flex-direction: row; 
-        align-items: flex-start; 
-    }
-
-    #menu-right {
-        margin-top: 10px;
-    }
-
-    #menu-right ul {
-        text-align: center;
-    }
-
-    #menu-right ul li {
-        display: block;
-        margin: 10px 0; 
-    }
-}
